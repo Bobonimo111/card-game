@@ -1,0 +1,44 @@
+<%- include("../partials/top_config.ejs")%>
+<%- include("../partials/navBar.ejs")%>
+<style>
+    label{
+        margin: 10px 0 5px 0;
+    }input[type="number"]{
+        max-width: 400px;
+        min-width: 100px;
+    }
+</style>
+<div class="container d-flex justify-content-start flex-column">
+        <div class="d-flex justify-content-between">
+            <h1>Novo card</h1>
+            <!-- <a class=" btn rounded-circle"><img src="/icon/add_circle_FILL0_wght400_GRAD0_opsz40.svg" alt=""></a> -->
+        </div>
+        <div class="position-relative">
+            <form action="/card/new" method="POST" enctype="multipart/form-data" >
+                <div class="d-flex flex-row gap-3">   
+                <div class="flex-grow-1">
+                    <label for="name" >Nome *</label>
+                    <input required class="form-control" type="text" name="name" id="name" >
+                    <label for="">tipo</label>
+                    <input class="form-control" type="text" name="type" id="type">
+                    <label for="">imagem *</label>
+                    <input required class="form-control  " type="file" accept="image/*" name="image" id="image" >
+                    <label for="">Descrição</label>
+                    <textarea class="form-control" name="description" id="description"></textarea>    
+                </div>
+                <div class="flex-grow-1">
+                    <label for="" >ataque *</label>
+                    <input required class="form-control" type="number" name="attack" id="attack" >
+                    <label for="">defesa *</label>
+                    <input required class="form-control" type="number" name="defense" id="defense" > 
+                </div>
+                </div>
+                <br> 
+                <input class="btn btn-success position-absolute bottom-0 end-0" type="submit" value="Criar">
+            </form>
+        </div>  
+    
+    
+</div>
+
+<%- include("../partials/bottom_config.ejs") %>
